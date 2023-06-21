@@ -1,0 +1,42 @@
+name: PlayerTracker
+version: 1.0.0
+main: io.github.Xaron11.playertracker.Main
+author: Xaron11
+api-version: 1.16
+depend: [NBTAPI]
+commands:
+  compass:
+    permission: playertracker.give
+    permission-message: You do not have permission to use this command.
+    aliases: [compass]
+    description: Gives you a player tracking compass.
+  reloadcompass:
+    permission: playertracker.reload
+    permission-message: You do not have permission to use this command.
+    aliases: [reloadcompass]
+    description: Reloads the plugin configuration file.
+permissions:
+  playertracker.*:
+    description: Wildcard permission
+    default: op
+    children:
+      playertracker.give: true
+      playertracker.use: true
+      playertracker.distance: true
+      playertracker.unlimited: true
+      playertracker.reload: true
+  playertracker.give:
+    description: Allows you to use the command /compass
+    default: false
+  playertracker.use:
+    description: Allows you to change a player tracking compass target by right-clicking
+    default: true
+  playertracker.distance:
+    description: Allows you to check distance to target with a player tracking compass by left-clicking
+    default: true
+  playertracker.unlimited:
+    description: Allows you to bypass compass amount limit
+    default: false
+  playertracker.reload:
+    description: Allows you to use the command /compassreload
+    default: false
